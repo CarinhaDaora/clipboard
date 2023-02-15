@@ -2,13 +2,14 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
+        <ion-title>Segunda página do Clipboard</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Tab 2</ion-title>
+          <ion-title size="large">Clipboard</ion-title>
+          <v-text-field label="Escreva algo"></v-text-field>
         </ion-toolbar>
       </ion-header>
 
