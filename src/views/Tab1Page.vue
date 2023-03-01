@@ -6,18 +6,16 @@
 
         <ion-item fill="outline">
           <ion-label position="stacked">Digite</ion-label>
-          <ion-input placeholder="Sou poggers..."></ion-input>
+          <ion-input v-model="text" placeholder="Escreva o texto"></ion-input>
         </ion-item>
 
-        <ion-button color="danger">Copiar</ion-button>
-
+        <ion-button @click="copy" color="danger">Copiar</ion-button>
 
         <ion-item id="label" fill="outline">
           <ion-label position="stacked">Colar</ion-label>
           <ion-input placeholder="Cole seu texto aqui..."></ion-input>
         </ion-item>
 
-        <ion-button color="success">Colar</ion-button>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true"> </ion-content>
@@ -38,6 +36,17 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Tab1Page",
+
+  data() {
+    return {
+      text: "estou testando agora"
+    }
+  },
+  methods: {
+    copy() {
+      navigator.clipboard.writeText(this.text)
+    }
+  },
   components: {
     IonPage,
     IonHeader,
@@ -54,19 +63,19 @@ export default defineComponent({
 </script>
 
 <style>
-#tudo{
+#tudo {
   padding: 100px;
   width: 900px;
   margin: 0 auto;
 }
-#header{
+#header {
   text-align: center;
 }
-#label{
-  margin-top:  40px;
+#label {
+  margin-top: 40px;
 }
 
-#title{
+#title {
   margin-bottom: 40px;
 }
 </style>
